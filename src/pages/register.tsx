@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/components/ui/use-toast";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const Register = () => {
   const { toast } = useToast();
@@ -50,7 +51,7 @@ const Register = () => {
   return (
     <>
       <Layout>
-        <div className="grid grid-cols-2 gap-40">
+        <div className="grid grid-cols-2 gap-2">
           <div>
             <img src={model} alt="model" className="w-[10rem] h-auto" />
           </div>
@@ -102,14 +103,28 @@ const Register = () => {
                     </FormItem>
                   )}
                 />
-                <Button
-                  type="submit"
-                  onClick={() => onSubmitForm(form.getValues())}
-                >
-                  Submit
-                </Button>
               </form>
             </Form>
+            <div className="flex items-center gap-2 mt-4">
+              <Checkbox />
+              <p>
+                I agree all statements in{" "}
+                <span className=" text-pink-400">terms and conditions</span>
+              </p>
+            </div>
+            <div className="flex gap-4 items-center mt-4">
+              <Button
+                type="submit"
+                onClick={() => onSubmitForm(form.getValues())}
+                className="w-1/3 rounded-3xl bg-pink-400"
+              >
+                Submit
+              </Button>
+              <p>
+                Already have account?{" "}
+                <span className="text-pink-400 cursor-pointer">Login</span>
+              </p>
+            </div>
           </div>
         </div>
       </Layout>
