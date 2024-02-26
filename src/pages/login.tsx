@@ -68,7 +68,7 @@ const Login = () => {
   return (
     <>
       <Layout>
-        <div className="grid grid-cols-2 gap-40">
+        <div className="grid grid-cols-2 gap-20">
           <div>
             <img src={model} alt="model" className="w-[10rem] h-auto" />
           </div>
