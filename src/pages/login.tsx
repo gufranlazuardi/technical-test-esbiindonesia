@@ -110,6 +110,7 @@ const Login = () => {
                 <Button
                   type="submit"
                   onClick={() => onSubmitForm(form.getValues())}
+                  className="w-1/3 rounded-3xl bg-pink-400"
                 >
                   Submit
                 </Button>

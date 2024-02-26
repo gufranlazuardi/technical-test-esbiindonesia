@@ -3,6 +3,7 @@ import model from "../assets/young-woman-playing-with-her-hair_329181-3522.avif"
 import { useForm } from "react-hook-form";
 import { RegisterSchema, registerSchema } from "@/utils/types";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useNavigate } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -19,6 +20,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 
 const Register = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const form = useForm<RegisterSchema>({
     resolver: zodResolver(registerSchema),
@@ -122,7 +124,12 @@ const Register = () => {
               </Button>
               <p>
                 Already have account?{" "}
-                <span className="text-pink-400 cursor-pointer">Login</span>
+                <span
+                  className="text-pink-400 cursor-pointer"
+                  onClick={() => navigate("/login")}
+                >
+                  Login
+                </span>
               </p>
             </div>
           </div>
